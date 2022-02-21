@@ -1,30 +1,27 @@
-class Employee {
-	private String name;
-	private float salary;
-	void setValue(String name, float salary) {
-		//name = name;		localvarible = localvariable 	
-		//salary = salary;
-		this.name = name;
-		//this.salary = salary;
-		if(salary<=0) {
-			this.salary = 8000;
-		}else {
-			this.salary  = salary;
-		}
+class Operation {
+	void add(int x, int y) {
+		System.out.println(x+y);
 	}
-	void display() {
-		System.out.println("Name is "+name);
-		System.out.println("Salary is "+salary);
+	void add(int x, int y, int z) {
+		System.out.println(x+y+z);
+	}
+	void add(float x, float y) {
+		System.out.println(x+y);
+	}
+	void add(String x, String y) {
+		System.out.println(x+y);
 	}
 }
 class Test {
 	public static void main(String args[]) {
-	//display();	
-	//salary = 12000;
-	Employee emp = new Employee();
-	//emp.name = "Raj Deep";
-	//emp.salary = -12000;
-	emp.setValue("Raj Deep",12000);
-	emp.display();
+	Operation op = new Operation();
+	op.add(1,2,3);
+	op.add(1,2);
+		op.add("1","2");
+	//op.add(10.10f,20.20f);
+	//op.add((float)10.10,(float)20.20);
+	double d1 = 10.10;
+	double d2= 20.20;
+	op.add((float)d1,(float)d2);	
 	}
 }
