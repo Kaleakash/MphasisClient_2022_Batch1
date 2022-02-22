@@ -23,6 +23,7 @@ class Tvs extends Bike {
 	}
 	void speed() {
 		super.speed();						// the code present in super class +
+		//speed();			// same class speed method called.. 
 		System.out.println("10km/hr");			// sub class merge 
 	}
 }
