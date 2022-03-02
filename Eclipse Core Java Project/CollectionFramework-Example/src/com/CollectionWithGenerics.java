@@ -22,7 +22,6 @@ public class CollectionWithGenerics {
 		ll.add(10);				// auto boxing :converting primitive to object. 
 		ll.add(20);
 		ll.add(30);
-		
 		int n	= ll.get(0);					// auto-unboxing : converting object to primitive 
 		System.out.println(n);
 	}
