@@ -28,11 +28,17 @@ Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_dat
 //		}
 		
 		// updatet Query 
-		int res = stmt.executeUpdate("update employee set salary = 35000 where id = 1");
-		if(res>0) {
-			System.out.println("Record updated successfully");
-		}else {
-			System.out.println("Record not present");
+//		int res = stmt.executeUpdate("update employee set salary = 35000 where id = 1");
+//		if(res>0) {
+//			System.out.println("Record updated successfully");
+//		}else {
+//			System.out.println("Record not present");
+//		}
+		// Retrieve Query 
+		
+		ResultSet rs = stmt.executeQuery("select * from employee");
+		while(rs.next()) {
+			System.out.println("id is "+rs.getInt("id")+" Name is "+rs.getString("name")+" Salary is "+rs.getFloat("salary"));
 		}
 		
 		} catch (Exception e) {
