@@ -35,5 +35,8 @@ public class EmployeeService {
 		}
 	}
 	
+	public List<Employee> findSalary(float salary){
+		return ed.findBySalary(salary);
+	}
 	
 }

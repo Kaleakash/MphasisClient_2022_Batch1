@@ -64,5 +64,16 @@ public class EmployeeDao {
 			return 1;
 		}
 	
-}
+	}
+	
+	public List<Employee> findBySalary(float salary){
+		SessionFactory sf = DbResource.getSessionFactory();
+		Session session = sf.openSession();
+		Query qry = session.createQuery("select emp from Employee emp where emp.salary > :sal ");
+		qry.setParameter("sal", salary);
+		List<Employee> listOfEmp = qry.list();
+		return listOfEmp;
+	}
+	
+	
 }

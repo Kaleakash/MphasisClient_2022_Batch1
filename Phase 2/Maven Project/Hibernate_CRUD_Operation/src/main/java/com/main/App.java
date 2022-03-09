@@ -15,7 +15,7 @@ public class App {
 		String result;
 		EmployeeService es = new EmployeeService();
 		do {
-				System.out.println("1:Display All 2: Insert 3: Delete 4: Update");
+				System.out.println("1:Display All 2: Insert 3: Delete 4: Update 5: find record by salary");
 				System.out.println("Enter your choice");
 				choice = sc.nextInt();
 				switch (choice) {
@@ -51,6 +51,16 @@ public class App {
 				        result = es.updateEmployee(emp1);
 				        System.out.println(result);
 				        break;
+				case 5:System.out.println("Plz enter the salary");
+				        salary =sc.nextFloat();
+				        List<Employee> listOfEmp1 = es.findSalary(salary);
+						   Iterator<Employee> li1  = listOfEmp1.iterator();
+						   while(li1.hasNext()) {
+							   Employee emp2 = li1.next();
+							   System.out.println(emp2);
+						   }
+						break;
+						   
 				default:	System.out.println("Wrong choice");
 					break;
 				}
