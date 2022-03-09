@@ -12,9 +12,10 @@ public class App {
 		float salary;
 		String con="";
 		int choice;
+		String result;
 		EmployeeService es = new EmployeeService();
 		do {
-				System.out.println("1:Display All");
+				System.out.println("1:Display All 2: Insert 3: Delete 4: Update");
 				System.out.println("Enter your choice");
 				choice = sc.nextInt();
 				switch (choice) {
@@ -25,7 +26,31 @@ public class App {
 						   System.out.println(emp);
 					   }
 					break;
-
+				case 2: System.out.println("Enter the id");
+				         id = sc.nextInt();
+				         System.out.println("Enter the name");
+				         name = sc.next();
+				         System.out.println("Enter the salary");
+				         salary = sc.nextFloat();
+				         Employee emp = new Employee(id, name, salary);
+				         result = es.storeEmployeeDetails(emp);
+				         System.out.println(result);
+				         break;
+				case 3: System.out.println("Enter the employee id to delete the record");
+				        id = sc.nextInt();
+				        result = es.deleteEmployee(id);
+				        System.out.println(result);
+				        break;
+				case 4: System.out.println("Enter the id");
+				        id = sc.nextInt();
+				        System.out.println("Enter the salary");
+				        salary = sc.nextFloat();
+				        Employee emp1 = new Employee();
+				        emp1.setId(id);
+				        emp1.setSalary(salary);
+				        result = es.updateEmployee(emp1);
+				        System.out.println(result);
+				        break;
 				default:	System.out.println("Wrong choice");
 					break;
 				}
