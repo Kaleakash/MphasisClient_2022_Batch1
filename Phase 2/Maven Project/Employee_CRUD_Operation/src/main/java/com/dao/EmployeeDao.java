@@ -53,8 +53,6 @@ PreparedStatement pstmt = con.prepareStatement("update employee set salary = ? w
 				}
 				return 0;
 			}
-			
-			
 			public List<Employee> findAllEmployee() {
 				
 				List<Employee> listOfEmp = new ArrayList<>();
