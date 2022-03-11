@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -42,6 +43,8 @@ public class Demo extends HttpServlet {
 //		}else {
 //			pw.println("Failure try once again");
 //		}
+		RequestDispatcher rd1 = request.getRequestDispatcher("Home");	// target is servlet page 
+		RequestDispatcher rd2 = request.getRequestDispatcher("index.html");  // target is html page 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_database", "root", "root@123");
@@ -51,18 +54,16 @@ public class Demo extends HttpServlet {
 		ResultSet rs = pstmt.executeQuery();
 		if(rs.next()) {
 			pw.println("Successfully login");
+			rd1.forward(request, response);				// we can see only output of target page.
 		}else {
 			pw.println("Invalid email id or password");
+			rd2.include(request, response);				// source error msg + index page display as one page. 
 		}
 		}catch (Exception e) {
 			pw.println(e);
 		}
 		//pw.println("Welcome Client to WEb Application"+name);		// this output display on client brower 
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter pw = response.getWriter();
 				String emailid = request.getParameter("emailid");
