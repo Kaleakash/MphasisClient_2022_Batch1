@@ -43,6 +43,7 @@ public class Demo extends HttpServlet {
 //		}else {
 //			pw.println("Failure try once again");
 //		}
+		response.setContentType("text/html");
 		RequestDispatcher rd1 = request.getRequestDispatcher("Home");	// target is servlet page 
 		RequestDispatcher rd2 = request.getRequestDispatcher("index.html");  // target is html page 
 		try {
@@ -57,7 +58,7 @@ public class Demo extends HttpServlet {
 			rd1.forward(request, response);				// we can see only output of target page.
 		}else {
 			pw.println("Invalid email id or password");
-			rd2.include(request, response);				// source error msg + index page display as one page. 
+				rd2.include(request, response);				// source error msg + index page display as one page. 
 		}
 		}catch (Exception e) {
 			pw.println(e);
@@ -66,7 +67,9 @@ public class Demo extends HttpServlet {
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter pw = response.getWriter();
-				String emailid = request.getParameter("emailid");
+		response.setContentType("text/html");
+		RequestDispatcher rd2 = request.getRequestDispatcher("index.html");  // target is html page 
+		String emailid = request.getParameter("emailid");
 				String password = request.getParameter("password");
 				try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -77,9 +80,11 @@ public class Demo extends HttpServlet {
 				int res = pstmt.executeUpdate();
 				if(res>0) {
 					pw.println("Account created successfully");
+						rd2.include(request, response);
 				}
 				}catch (Exception e) {
-					pw.println(e);
+					pw.println(e.getMessage());
+						rd2.include(request, response);
 				}
 	}
 
