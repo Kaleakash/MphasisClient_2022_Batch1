@@ -24,7 +24,7 @@ public class EmployeeDao {
 	public List<Employee> getAllEmployee() {
 		SessionFactory sf = DbResource.getSessionFactory();
 		Session session = sf.openSession();
-		Query<Employee> qry = session.createQuery("select e from Employe e");
+		Query<Employee> qry = session.createQuery("select e from Employee e");
 		List<Employee> listOfEmp = qry.list();
 		return listOfEmp;
 	}

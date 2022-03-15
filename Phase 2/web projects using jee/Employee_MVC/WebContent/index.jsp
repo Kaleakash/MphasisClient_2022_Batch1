@@ -9,5 +9,7 @@
 <body>
 <h2>Employee Management System</h2>
 <%@include file="storeEmployee.jsp" %>
+<br/>
+<a href="EmployeeController">Display All Employee</a>
 </body>
 </html>
