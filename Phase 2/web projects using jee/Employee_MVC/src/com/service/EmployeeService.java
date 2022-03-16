@@ -9,6 +9,7 @@ public class EmployeeService {
 
 	public String storeEmployee(Employee emp) {
 		EmployeeDao ed = new EmployeeDao();
+		
 		if(ed.storeEmployeeDetails(emp)>0) {
 			return "Record stored successfully";
 		}else {
