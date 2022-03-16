@@ -38,7 +38,7 @@
 </table>
 <br/>
 <h2>Employee Details - Using JSTL</h2>
-<table border="1">
+<table border="1" >
 		<tr>
 			<th>Id</th>
 			<th>Name</th>
@@ -46,6 +46,7 @@
 		</tr>
 		<core:forEach items="${sessionScope.obj}" var="emp">
 			<tr>
+				
 				<td><core:out value="${emp.getId()}"></core:out></td>
 				<td><core:out value="${emp.getName()}"></core:out></td>
 				<td><core:out value="${emp.getSalary()}"></core:out></td>
