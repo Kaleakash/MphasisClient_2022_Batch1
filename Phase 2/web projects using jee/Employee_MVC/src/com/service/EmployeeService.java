@@ -8,7 +8,7 @@ import com.dao.EmployeeDao;
 public class EmployeeService {
 
 	public String storeEmployee(Employee emp) {
-		EmployeeDao ed = new EmployeeDao();
+				EmployeeDao ed = new EmployeeDao();
 		
 		if(ed.storeEmployeeDetails(emp)>0) {
 			return "Record stored successfully";
@@ -19,7 +19,7 @@ public class EmployeeService {
 	}
 	
 	public List<Employee> getAllEmployee() {
-		EmployeeDao ed = new EmployeeDao();
+					EmployeeDao ed = new EmployeeDao();
 		return ed.getAllEmployee();
 	}
 }

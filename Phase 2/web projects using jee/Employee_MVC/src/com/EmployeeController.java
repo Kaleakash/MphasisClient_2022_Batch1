@@ -34,7 +34,7 @@ public class EmployeeController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		EmployeeService es = new EmployeeService();
+			EmployeeService es = new EmployeeService();
 		List<Employee> listOfEmp = es.getAllEmployee();
 		HttpSession hs = request.getSession();
 		hs.setAttribute("obj", listOfEmp);
@@ -49,11 +49,11 @@ public class EmployeeController extends HttpServlet {
 		PrintWriter pw = response.getWriter();
 		String name  = request.getParameter("name");
 		float salary = Float.parseFloat(request.getParameter("salary"));
-		Employee emp = new Employee();
+				Employee emp = new Employee();
 		emp.setName(name);
 		emp.setSalary(salary);
 		
-		EmployeeService es = new EmployeeService();
+				EmployeeService es = new EmployeeService();
 		
 		String result = es.storeEmployee(emp);
 		pw.println(result);
