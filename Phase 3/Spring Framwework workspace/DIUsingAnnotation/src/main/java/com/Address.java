@@ -1,10 +1,13 @@
 package com;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Address {
+@Value(value = "Bangalore")
 private String city;
+@Value(value = "kar")
 private String state;
 public String getCity() {
 	return city;
