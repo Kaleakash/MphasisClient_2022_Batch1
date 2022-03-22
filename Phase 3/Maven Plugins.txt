@@ -100,6 +100,26 @@ web.xml for DispatcherServlet
   		<url-pattern>*.spring</url-pattern>
   </servlet-mapping>
 
+
+hibernate session factory 
+
+
+<bean class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" id="sf" scope="singleton">
+	<property name="dataSource" ref="ds"></property>
+	
+	<property name="annotatedClasses">
+		<list>
+			<value>com.bean.Employee</value>
+		</list>
+	</property>
+	
+	<property name="hibernateProperties">
+		<props>
+			<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+		</props>
+	</property>
+</bean>
+
 Two dependenices for convert java object to json or xml 
 
 <dependency>
