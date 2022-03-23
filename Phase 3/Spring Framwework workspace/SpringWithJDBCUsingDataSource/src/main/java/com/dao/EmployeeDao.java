@@ -14,12 +14,12 @@ import com.bean.Employee;
 public class EmployeeDao {
 
 	@Autowired
-	DataSource ds;		// it will pull the ds from xml file. 
+	DataSource ds1;		// it will pull the ds from xml file. 
 	// 	before spring framework we lookup datasource from application server. 
 	public List<Employee> getAllEmployee() {
 		List<Employee> listOfEmp = new ArrayList<>();		
 		try {
-			Connection con = ds.getConnection();
+			Connection con = ds1.getConnection();
 			PreparedStatement pstmt =  con.prepareStatement("select * from employee");
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
