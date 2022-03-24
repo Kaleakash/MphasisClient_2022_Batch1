@@ -2,6 +2,7 @@ package com.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -16,11 +17,12 @@ public class EmployeeController {
 	
 	@RequestMapping(value = "/storeEmployee")
 	public String storeEmployee(@RequestParam("name") String name, 
-			@RequestParam("salary") float salary, Employee emp) {
+			@RequestParam("salary") float salary, Employee emp,Model mm) {
 			emp.setName(name);
 			emp.setSalary(salary);
 			//System.out.println(emp.getName()+" "+emp.getSalary());
 			String result = employeeService.storeEmployee(emp);
+			mm.addAttribute("msg", result);      // HttpServletRequest req, req.setAttribute("msg",result);
 			System.out.println(result);
 			return "addEmployee";
 	}

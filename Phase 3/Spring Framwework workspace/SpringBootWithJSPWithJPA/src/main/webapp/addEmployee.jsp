@@ -15,5 +15,6 @@
 <input type="submit" value="store employee">
 <input type="reset" value="reset">
 </form>
+${requestScope.msg}
 </body>
 </html>
