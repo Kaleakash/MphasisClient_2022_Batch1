@@ -145,6 +145,15 @@ Spring boot basic starter (non web starter)
 </dependency>
 
 
+Maven Parent dependencies 
+
+  <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.2</version>
+ </parent>
+
+
 Spring boot web starter 
 
 
@@ -197,6 +206,10 @@ view resolver
 spring.mvc.view.prefix: /WEB-INF/jsp/
 spring.mvc.view.suffix: .jsp
 
+or 
+
+spring.mvc.view.prefix: /
+spring.mvc.view.suffix: .jsp
 
 @GetMapping(value="loginPage")
 public String sayHello() {

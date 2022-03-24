@@ -8,10 +8,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MyController {
 
-	@RequestMapping(value = "/",method = RequestMethod.GET)
-	public ModelAndView openPage() {
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("index.html");
-		return mav;
+	@RequestMapping(value = "/say",method = RequestMethod.GET)
+	public String openPage() {
+		System.out.println("I came here");
+		return "hello";
 	}
 }
