@@ -1,5 +1,7 @@
 package com.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,4 +28,20 @@ public class EmployeeController {
 			System.out.println(result);
 			return "addEmployee";
 	}
+	
+	@RequestMapping(value="/displayEmployee")
+	public String displayEmployeeDetails(Model mm) {
+		List<Employee> listOfEmp = employeeService.getAllEmployee();
+		mm.addAttribute("listOfEmployee", listOfEmp);	// req.setAttribute("listOfEmployee",listOfEmp);
+		return "display";
+	}
 }
+
+
+
+
+
+
+
+
+

@@ -8,6 +8,7 @@
 </head>
 <body>
 <h2>Employee Management System</h2>
-<a href="addEmployee.jsp">Add Employee</a>
+<a href="addEmployee.jsp">Add Employee</a><br/>
+<a href="displayEmployee">Display Employee</a><br/>
 </body>
 </html>
