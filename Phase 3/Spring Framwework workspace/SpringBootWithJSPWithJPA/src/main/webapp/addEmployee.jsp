@@ -9,12 +9,13 @@
 <body>
 <form action="storeEmployee">
 <label>Name</label>
-<input type="text" name="name"><br/>
+<input type="text" name="name1"><br/>
 <label>Salary</label>
-<input type="text" name="salary"><br/>
+<input type="text" name="salary1"><br/>
 <input type="submit" value="store employee">
 <input type="reset" value="reset">
 </form>
-${requestScope.msg}
+${requestScope.msg}<br/>
+<a href="index.jsp">Index page</a>
 </body>
 </html>
