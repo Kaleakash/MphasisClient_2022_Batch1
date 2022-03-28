@@ -147,7 +147,7 @@ Spring boot basic starter (non web starter)
 
 Maven Parent dependencies 
 
-  <parent>
+ <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.5.2</version>
@@ -161,7 +161,6 @@ Spring boot web starter
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-web</artifactId>
-    <version>2.5.2</version>
 </dependency>
 
 spring boot jdbc starter 
