@@ -38,7 +38,6 @@ public class EmployeeDao {
 		}
 		return 1;
 	}
-	
 	public int updateEmployee(Employee emp) {
 		
 			EntityManager manager = emf.createEntityManager();
@@ -54,7 +53,6 @@ public class EmployeeDao {
 				return 1;
 			}
 	}
-
 	public int deleteEmployee(int id) {
 		
 		EntityManager manager = emf.createEntityManager();
