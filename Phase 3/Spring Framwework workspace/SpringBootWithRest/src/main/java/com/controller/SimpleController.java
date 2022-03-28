@@ -83,7 +83,7 @@ public class SimpleController {
 			}
 	}
 	
-	// http://localhost:8080/storeEmployee 
+	// http://localhost:8080/storeEmployee 			// whole object in json format 
 	@RequestMapping(value = "storeEmployee",method = RequestMethod.POST,
 			consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String storeData(@RequestBody Employee emp) {
@@ -95,5 +95,23 @@ public class SimpleController {
 		return "Post method called "+emp.getName();
 	}
 	
+	// http://localhost:8080/updateEmployee 		// partial object in json format. 
+		@RequestMapping(value = "updateEmployee",method = RequestMethod.PUT,
+				consumes = MediaType.APPLICATION_JSON_VALUE)
+	public String updateData(@RequestBody Employee emp) {
+			System.out.println(" Put method called...");
+			System.out.println(emp);
+			
+			// logic to call service layer from there dao layer to store the data.
+			
+		return "Put method called "+emp.getName();
+	}
+		// http://localhost:8080/deleteEmployee/100
+		@RequestMapping(value = "deleteEmployee/{id}",method = RequestMethod.DELETE)
+		public String deleteData(@PathVariable("id") int id) {
+			System.out.println("Delete method called..");
+			// logic to call service layer it will dao in dao we write database logic to delete the record. 
+			return "You record deleted using id as "+id;
+		}
 	
 }
