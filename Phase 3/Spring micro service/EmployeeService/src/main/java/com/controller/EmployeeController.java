@@ -23,10 +23,10 @@ public class EmployeeController {
 		return result;
 	}
 	@Autowired
-	RestTemplate restTemplate;
+	RestTemplate restTemplate;				// This api is uses to call another micro service. 
 	
 	@Bean
-	public RestTemplate restTemplate() {
+	public RestTemplate restTemplate() {		// this method is responsible to give the object of resttemplate
 		return new RestTemplate();
 	}
 }
