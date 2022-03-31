@@ -10,7 +10,6 @@ import com.service.Employee;
 import com.service.EmployeeService;
 
 class EmployeeServiceTest {
-
 	@Test
 	void testCheckUser() {
 		//fail("Not yet implemented");
@@ -18,7 +17,6 @@ class EmployeeServiceTest {
 		boolean res = es.checkUser("Raj", "123");
 		assertTrue(res);
 	}
-
 	@Test
 	void testGetEmployee() {
 		//fail("Not yet implemented");
@@ -28,7 +26,6 @@ class EmployeeServiceTest {
 		assertEquals("Ravi", emp.getName());
 		assertEquals(12000, emp.getSalary());
 	}
-
 	@Test
 	void testGetAllEmployees() {
 		//fail("Not yet implemented");
