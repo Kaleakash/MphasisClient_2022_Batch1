@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.bean.Employee;
+import com.dao.EmployeeDao;
 
 public class EmployeeService {
 		public String sayHello(String name) {
@@ -47,4 +48,11 @@ public class EmployeeService {
 			listOfemp.add(emp3);
 			return listOfemp;
 		}
+		
+		EmployeeDao ed = new EmployeeDao();
+		public List<Employee> getEmployeeDataFromDb() {
+				return ed.getAllEmployeeDetails();
+		}
+		
+		
 }
