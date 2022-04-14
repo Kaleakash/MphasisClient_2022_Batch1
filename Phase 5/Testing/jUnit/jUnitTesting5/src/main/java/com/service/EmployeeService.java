@@ -54,5 +54,12 @@ public class EmployeeService {
 				return ed.getAllEmployeeDetails();
 		}
 		
+		public String storeRecord(Employee emp) {
+			if(ed.storeEmployeeDetails(emp)>0) {
+				return "Record inserted";
+			}else {
+				return "Record didn't insert";
+			}
+		}
 		
 }

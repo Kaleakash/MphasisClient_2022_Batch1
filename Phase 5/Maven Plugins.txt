@@ -300,3 +300,12 @@ spring boot testing starter
     <artifactId>spring-boot-starter-test</artifactId>
     <scope>test</scope>
 </dependency>
+
+
+Selenium Testing jar 
+
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.0.0</version>
+</dependency>

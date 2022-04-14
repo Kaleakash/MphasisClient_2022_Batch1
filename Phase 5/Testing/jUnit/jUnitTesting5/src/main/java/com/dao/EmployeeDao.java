@@ -31,4 +31,24 @@ Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_dat
 		}
 		return listOfEmp;
 	}
+	
+	
+	public int storeEmployeeDetails(Employee emp) {
+		try {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_database", "root", "root@123");
+	PreparedStatement pstmt = con.prepareStatement("insert into employee values(?,?,?,?)");
+		pstmt.setInt(1, emp.getId());
+		pstmt.setString(2, emp.getName());
+		pstmt.setFloat(3, emp.getSalary());
+		pstmt.setString(4, emp.getDesg());
+		int res = pstmt.executeUpdate();
+		return res;
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Exception "+e);
+			return 0;
+		}
+	
+	}
 }
