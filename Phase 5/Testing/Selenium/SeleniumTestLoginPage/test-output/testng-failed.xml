@@ -6,8 +6,8 @@
       <class name="test.GooglePageTest">
         <methods>
           <include name="beforeTest"/>
+          <include name="gmailTest"/>
           <include name="afterTest"/>
-          <include name="googlePageTest"/>
         </methods>
       </class> <!-- test.GooglePageTest -->
     </classes>

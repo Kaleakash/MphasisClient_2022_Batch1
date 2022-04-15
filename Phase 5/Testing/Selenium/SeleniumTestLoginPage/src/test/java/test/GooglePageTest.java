@@ -18,10 +18,10 @@ public class GooglePageTest {
   
   @BeforeTest
   public void beforeTest() {
-	  System.setProperty("webdriver.edge.driver", "D:\\Desktop\\Mphasis Client Session\\Feb 2022 Batch\\Repository\\Phase 5\\Testing\\msedgedriver.exe");
-	  driver = new EdgeDriver();
-//	  System.setProperty("webdriver.chrome.driver", "D:\\Desktop\\Mphasis Client Session\\Feb 2022 Batch\\Repository\\Phase 5\\Testing\\chromedriver.exe");
-//	  driver  = new ChromeDriver();
+	  //System.setProperty("webdriver.edge.driver", "D:\\Desktop\\Mphasis Client Session\\Feb 2022 Batch\\Repository\\Phase 5\\Testing\\msedgedriver.exe");
+	  //driver = new EdgeDriver();
+	  System.setProperty("webdriver.chrome.driver", "D:\\Desktop\\Mphasis Client Session\\Feb 2022 Batch\\Repository\\Phase 5\\Testing\\chromedriver.exe");
+	  driver  = new ChromeDriver();
   }
 
   
@@ -64,6 +64,34 @@ public class GooglePageTest {
 			// TODO: handle exception
 		}
 	  driver.findElement(By.name("b1")).click();
+	  
+  }
+  
+  
+  
+  @Test
+  public void gmailTest() {
+	  driver.navigate().to("https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin");
+	  driver.manage().window().maximize();
+	  try {
+		Thread.sleep(5000);
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+	  driver.findElement(By.name("identifier")).sendKeys("akash300383@gmail.com");
+	  try {
+			Thread.sleep(5000);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}  
+	  driver.findElement(By.className("VfPpkd-vQzf8d")).click();
+	  //driver.findElement(By.name("password")).sendKeys("123");	
+	  try {
+			Thread.sleep(5000);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	  //driver.findElement(By.name("b1")).click();
 	  
   }
   
