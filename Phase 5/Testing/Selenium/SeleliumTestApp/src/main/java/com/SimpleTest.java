@@ -29,7 +29,7 @@ public class SimpleTest {
 		System.out.println(ele1.getText());
 		System.out.println(ele2.getText());
 		System.out.println(ele3.getTagName());
-		System.out.println(ele3.getText());
+	
 	}
 
 }
