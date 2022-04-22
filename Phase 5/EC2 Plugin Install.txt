@@ -4,7 +4,13 @@ sudo yum -y update
 
 --------------->Git install 
 
-sudo yum install git -y
+sudo yum -y git 
+
+------------------------> Install Java 
+
+sudo yum install java-1.8.0-openjdk-devel
+
+
 
 ------------------->Jenkin 
 
