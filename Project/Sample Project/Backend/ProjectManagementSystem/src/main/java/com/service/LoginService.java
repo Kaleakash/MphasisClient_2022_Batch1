@@ -32,13 +32,13 @@ public class LoginService {
 	
 	public String signIn(Login login) {
 		if(login.getTypeOfUser().equals("admin")) {
-			if(loginRepository.checkLoginDetails(login.getEmailid(), login.getPassword())!=null) {
+			if(loginRepository.checkLoginDetails(login.getEmailid(), login.getPassword(),login.getTypeOfUser())!=null) {
 				return "admin login successfully";
 			}else {
 				return "failure";
 			}
 		}else {
-			if(loginRepository.checkLoginDetails(login.getEmailid(), login.getPassword())!=null) {
+			if(loginRepository.checkLoginDetails(login.getEmailid(), login.getPassword(),login.getTypeOfUser())!=null) {
 				return "user login successfully";
 			}else {
 				return "failure";

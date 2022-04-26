@@ -10,7 +10,7 @@ import com.bean.Login;
 @Repository
 public interface LoginRepository extends JpaRepository<Login, String>{
 
-	@Query("select ll from Login ll where ll.emailid = :emailid and ll.password = :password")
-	public Login checkLoginDetails(@Param("emailid") String emailId, @Param("password") String pass);
+	@Query("select ll from Login ll where ll.emailid = :emailid and ll.password = :password and typeofuser=:typeofuser")
+public Login checkLoginDetails(@Param("emailid") String emailId, @Param("password") String pass,@Param("typeofuser") String typeOfUser);
 	
 }
