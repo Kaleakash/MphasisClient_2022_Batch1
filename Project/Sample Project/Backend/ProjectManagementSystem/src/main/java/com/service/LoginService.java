@@ -15,19 +15,17 @@ public class LoginService {
 	
 	public String signUp(Login login) {
 		
+		if(login.getTypeOfUser().equals("admin")){
+			return "You can't create admin account";
+		}else {
 			boolean res = loginRepository.existsById(login.getEmailid());
 			if(res) {
-				return "Account not create";
+				return "Account exist";
 			}else {
-				
-				if(login.getTypeOfUser().equals("admin")){
-					return "You can't create admin account";
-				}
-				else {
 					loginRepository.save(login);
-					return "Account created successfully";	
-				}
+					return "Account created successfully";			
 			}
+		}	
 	}
 	
 	public String signIn(Login login) {
